@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegant Eid Greetings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('gif4.avif') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background-color: rgba(255, 145, 0, 0.774);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.733);
+      max-width: 400px;
+      width: 90%;
+      margin: 0 15px;
+    }
+
+    h1 {
+      color: #311b01de;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-family: Cursive;
+    }
+
+    p {
+      color: rgb(65, 63, 63);
+      font-family: cursive;
+    }
+
+    input[type="text"] {
+      padding: 0.8rem;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.5rem;
+      font-family: cursive;
+      font-size: 1.1rem;
+      background: linear-gradient(145deg, #fff, #f9f9f9);
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #8b4b0a;
+      box-shadow: 0 0 8px rgba(5, 5, 5, 0.897);
+    }
+
+    button {
+      background-color: #522b0b;
+      color: white;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: cursive;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 6px 15px rgba(99, 46, 4, 0.918);
+    }
+
+    button:hover {
+      background-color: #774708;
+    }
+
+    #greetingMessage {
+      margin-top: 1.5rem;
+      font-weight: bolder;
+      font-size: 1.5rem;
+      color: #ffffff;
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #nameInput, button {
+      transition: all 0.5s ease;
+    }
+
+    .hide {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      input[type="text"], button {
+        font-size: 1rem;
+        padding: 0.6rem;
+      }
+
+      #greetingMessage {
+        font-size: 1.3rem;
+      }
+    }
+
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      input[type="text"], button {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+      }
+
+      #greetingMessage {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Wishing You a Blessed Eid</h1>
+    <p id="greetingParagraph">Enter your name to receive your special Eid greeting:</p>
+    <input type="text" id="nameInput" placeholder="Enter Your Name..." />
+    <button onclick="showGreeting()">Get Greeting</button>
+    <div id="greetingMessage"></div>
+  </div>
+
+  <script>
+    function showGreeting() {
+      const name = document.getElementById('nameInput').value;
+      const greetingMessage = document.getElementById('greetingMessage');
+      const greetingParagraph = document.getElementById('greetingParagraph');
+      const inputField = document.getElementById('nameInput');
+      const button = document.querySelector('button');
+
+      if (name) {
+
+        greetingParagraph.style.display = 'none';
+        inputField.classList.add('hide');
+        button.classList.add('hide');
+
+        setTimeout(() => {
+          inputField.style.display = 'none';
+          button.style.display = 'none';
+
+          greetingMessage.innerHTML = `Eid Mubarak, <strong style="color: #311b01de;">${name}</strong>  ! May this Eid bring you endless joy and prosperity.`;
+          greetingMessage.style.display = 'block';
+        }, 500);
+      }
+    }
+  </script>
+</body>
+</html>
